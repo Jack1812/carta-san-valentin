@@ -1,0 +1,184 @@
+/* reset css */
+* {
+  min-width: 0;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: 'Dancing Script', cursive; /* Fuente manuscrita */
+  background-color: #fad7df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor principal */
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Carta cerrada */
+.container-letter {
+  width: 200px; /* Tamaño pequeño cuando está cerrada */
+  height: 150px;
+  background-color: #fe3334;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.75s ease-in-out;
+}
+
+/* Carta abierta */
+.container-letter.open {
+  width: 100%; /* Ocupa el 100% del ancho */
+  height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+  border-radius: 0;
+  position: fixed; /* Fija la carta en la pantalla */
+  top: 0;
+  left: 0;
+  z-index: 10; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Papel (interior de la carta) */
+.paper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 2rem;
+  line-height: 1.5;
+  opacity: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-image: url('textura-papel.jpg'); /* Textura de papel */
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 0.75s ease-in-out;
+  overflow-y: auto; /* Scroll si el texto es muy largo */
+}
+
+/* Mostrar el papel cuando la carta está abierta */
+.container-letter.open .paper {
+  opacity: 1;
+}
+
+/* Mensaje */
+.message {
+  font-size: 2rem; /* Tamaño grande del texto */
+  color: #333;
+  text-align: center;
+}
+
+/* Botones */
+.options {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.options button {
+  color: #ff3234;
+  font-weight: 600;
+  border-radius: 5px;
+  background: #fad7df;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #fe3334;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.options button:hover {
+  background: #ff989e;
+  color: white;
+}
+/* Estilo del botón "Ver video" */
+.video-button {
+  display: none; /* Oculto inicialmente */
+  margin-top: 2rem;
+  padding: 1rem 9rem;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #ff3234;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.video-button:hover {
+  background-color: #ff989e;
+}
+
+/* Contenedor del video */
+.video-container {
+  display: none; /* Oculto inicialmente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+  z-index: 20; /* Por encima de todo */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Botón "Cerrar video" */
+#close-video {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #ff3234;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#close-video:hover {
+  background-color: #ff989e;
+}
+/* Estilo del contenedor del GIF */
+.gif-container {
+  position: fixed;
+  bottom: 20px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde la derecha */
+  z-index: 5; /* Debajo de la carta (z-index de la carta es 10) */
+}
+
+/* Estilo del GIF */
+.gif {
+  width: 100px; /* Tamaño del GIF */
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}

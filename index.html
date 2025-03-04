@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="container-letter">
+      <div class="paper">
+        <p class="message">
+          Pa ti monis,<br><br>
+          Hoy quiero decirte lo mucho que significas para mí. Eres la persona más especial de las especiales en mi vida, y cada día a tu lado es un regalo que atesoro con todo mi corazón. Tu sonrisa ilumina mis días, y tu amor llena mi vida de una felicidad que no tiene comparación.
+          Recuerdo la primera vez que te vi, y supe que eras alguien único, alguien con quien quería compartir todo. Desde entonces, cada momento contigo ha sido mágico, lleno de complicidad, risas y un amor que crece cada día. Eres mi confidente, mi apoyo incondicional y mi mejor amiga.
+          Prometo estar a tu lado en las buenas y en las malas, compartiendo risas, sueños y aventuras. Eres mi razón para sonreír cada mañana, y quiero pasar el resto de mi vida contigo, construyendo un futuro lleno de amor y complicidad.
+          Te amo más de lo que las palabras pueden expresar, porque lo que siento por ti va más allá de cualquier frase. Eres mi todo, Monis, la más especial de las especiales.<br><br>
+          Con todo mi cariño,<br>
+          Tu cariño
+        </p>
+        <!-- Botón "Ver video" -->
+        <button id="watch-video" class="video-button">Precioname :v</button>
+      </div>
+    </div>
+    <div class="options">
+      <button id="open">Abrir</button>
+      <button id="close">Cerrar</button>
+    </div>
+  </main>
+
+  <!-- Contenedor para el video (oculto inicialmente) -->
+  <div id="video-container" class="video-container">
+    <iframe
+      width="100%"
+      height="100%"
+      src="./1.mp4" <!-- Reemplaza VIDEO_ID con el ID de tu video -->
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <button id="close-video">Cerrar video</button>
+  </div>
+  <!-- Contenedor para el GIF -->
+  <div class="gif-container">
+    <img src="2.gif" alt="GIF decorativo" class="gif">
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
